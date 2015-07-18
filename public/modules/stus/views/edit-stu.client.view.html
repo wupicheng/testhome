@@ -1,0 +1,35 @@
+<section data-ng-controller="StusController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1>Edit Stu</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="stuForm" class="form-horizontal" data-ng-submit="update(stuForm.$valid)" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error' : submitted && stuForm.stu_name.$invalid}">
+					<label class="control-label" for="stu_name">姓名</label>
+					<div class="controls">
+						<input name="title" type="text" data-ng-model="stu.stu_name" id="stu_name" class="form-control" placeholder="stu_name" required>
+					</div>
+					<div ng-show="submitted && stuForm.stu_name.$invalid" class="help-block">
+						<p ng-show="stuForm.stu_name.$error.required" class="text-danger">stu_name is required</p>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error' : submitted && stuForm.content.$invalid}">
+					<label class="control-label" for="stu_password">Content</label>
+					<div class="controls">
+						<textarea name="stu_password" data-ng-model="stu.stu_password" id="stu_password" class="form-control" cols="30" rows="10" placeholder="stu_password" required></textarea>
+					</div>
+					<div ng-show="submitted && stuForm.stu_password.$invalid" class="help-block">
+						<p ng-show="stuForm.stu_password.$error.required" class="text-danger">Content is required</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Update" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

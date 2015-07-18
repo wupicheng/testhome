@@ -1,0 +1,35 @@
+<section data-ng-controller="TeachersController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1>Edit Teacher</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="teacherForm" class="form-horizontal" data-ng-submit="update(teacherForm.$valid)" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error' : submitted && teacherForm.teacher_name.$invalid}">
+					<label class="control-label" for="teacher_name">姓名</label>
+					<div class="controls">
+						<input name="title" type="text" data-ng-model="teacher.teacher_name" id="teacher_name" class="form-control" placeholder="teacher_name" required>
+					</div>
+					<div ng-show="submitted && teacherForm.teacher_name.$invalid" class="help-block">
+						<p ng-show="teacherForm.teacher_name.$error.required" class="text-danger">teacher_name is required</p>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error' : submitted && teacherForm.content.$invalid}">
+					<label class="control-label" for="teacher_password">Content</label>
+					<div class="controls">
+						<textarea name="teacher_password" data-ng-model="teacher.teacher_password" id="teacher_password" class="form-control" cols="30" rows="10" placeholder="teacher_password" required></textarea>
+					</div>
+					<div ng-show="submitted && teacherForm.teacher_password.$invalid" class="help-block">
+						<p ng-show="teacherForm.teacher_password.$error.required" class="text-danger">Content is required</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Update" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

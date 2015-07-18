@@ -1,0 +1,29 @@
+<section data-ng-controller="ExamsController">
+	<div class="page-header">
+		<h1>添加学生</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="examForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error': examForm.exam_name.$dirty && examForm.exam_name.$invalid }">
+					<label class="control-label" for="exam_name">学生姓名</label>
+					<div class="controls">
+						<input name="exam_name" type="text" data-ng-model="exam_name" id="exam_name" class="form-control" placeholder="姓名" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="exam_password">密码</label>
+					<div class="controls">
+						<textarea name="exam_password" data-ng-model="exam_password" id="exam_password" class="form-control" cols="30" rows="10" placeholder="密码"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

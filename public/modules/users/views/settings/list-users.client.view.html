@@ -1,0 +1,20 @@
+<section data-ng-controller="ListusersController" data-ng-init="find()">
+	<div class="page-header">
+		<h1>所有账号</h1>
+	</div>
+	<div class="list-group">
+		<a data-ng-repeat="user in users" data-ng-href="#!/users/{{user._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="user.username"></span>
+				by
+				<span data-ng-bind="user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="user.username"></h4>
+			<p class="list-group-item-text" data-ng-bind="user.displayName"></p>
+		</a>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="users.$resolved && !users.length">
+		No exams yet, why don't you <a href="/#!/users/create">create one</a>?
+	</div>
+</section>

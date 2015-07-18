@@ -1,0 +1,29 @@
+<section data-ng-controller="TeachersController">
+	<div class="page-header">
+		<h1>添加学生</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="teacherForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error': teacherForm.teacher_name.$dirty && teacherForm.teacher_name.$invalid }">
+					<label class="control-label" for="teacher_name">学生姓名</label>
+					<div class="controls">
+						<input name="teacher_name" type="text" data-ng-model="teacher_name" id="teacher_name" class="form-control" placeholder="姓名" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="teacher_password">密码</label>
+					<div class="controls">
+						<textarea name="teacher_password" data-ng-model="teacher_password" id="teacher_password" class="form-control" cols="30" rows="10" placeholder="密码"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
