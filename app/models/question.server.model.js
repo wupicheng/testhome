@@ -45,4 +45,4 @@ var QuestionSchema = new Schema({
 
 });
 
-mongoose.model('Course', PointSchema);
+mongoose.model('Question', QuestionSchema);

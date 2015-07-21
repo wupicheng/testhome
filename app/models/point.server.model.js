@@ -30,4 +30,4 @@ var PointSchema = new Schema({
 
 });
 
-mongoose.model('Course', PointSchema);
+mongoose.model('Point', PointSchema);
