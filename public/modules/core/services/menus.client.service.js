@@ -97,7 +97,7 @@ angular.module('core').service('Menus', [
 				items: [],
 				shouldRender: shouldRender
 			});
-             console.log(this.menus[menuId]);
+             //console.log(this.menus[menuId]);
 			// Return the menu object
 			return this.menus[menuId];
 		};

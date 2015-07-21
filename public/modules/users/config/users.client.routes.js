@@ -13,6 +13,14 @@ angular.module('users').config(['$stateProvider',
                 url: '/users/listAllUsers',
                 templateUrl: 'modules/users/views/settings/list-users.client.view.html'
             }).
+        state('viewUser', {
+                url: '/users/:userId',
+                templateUrl: 'modules/users/views/settings/view-user.client.view.html'
+            }).
+        state('editUser', {
+                url: '/users/:userId/edit',
+                templateUrl: 'modules/users/views/settings/edit-profile.client.view.html'
+            }).
 		state('password', {
 			url: '/settings/password',
 			templateUrl: 'modules/users/views/settings/change-password.client.view.html'

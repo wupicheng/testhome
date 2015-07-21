@@ -12,7 +12,10 @@ module.exports = function(app) {
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users').put(users.update);
+    //app.route('/users/:userName').get(users.list2);
 	app.route('/users').get(users.list);
+
+	//app.route('/users/:userName').post(users.list2);
 	app.route('/users/accounts').delete(users.removeOAuthProvider);
 
 	// Setting up the users password api
@@ -55,4 +58,5 @@ module.exports = function(app) {
 
 	// Finish by binding the user middleware
 	app.param('userId', users.userByID);
+	//app.param('userName', users.userByName);
 };
